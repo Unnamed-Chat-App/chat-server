@@ -251,7 +251,12 @@ export const getUserDetails = async (
         where: { followedById: requesterId },
         select: { followedToId: true },
       },
-      profile: { select: { bio: true } },
+      profile: {
+        select: {
+          bio: true,
+          pronouns: true,
+        },
+      },
       _count: {
         select: {
           followers: true,
